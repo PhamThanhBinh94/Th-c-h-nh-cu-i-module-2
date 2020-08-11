@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -72,6 +73,7 @@ public class PhoneBookManager {
                 }
                 if (enter == "Y") {
                     phoneBooks.remove(phoneBooks.indexOf(phoneBook));
+                    System.out.println(phoneBook);
                 }
                 break;
             } else {
@@ -89,5 +91,22 @@ public class PhoneBookManager {
             }
         }
     }
-
+    public void writeProductList(ArrayList<PhoneBook> phoneBooks) {
+        ReadWriteFile readWriteFile = new ReadWriteFile();
+        try {
+            readWriteFile.writeObjectFile("PhoneBook.txt",phoneBooks);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public ArrayList<PhoneBook> readProductList(String path) {
+        ReadWriteFile readWriteFile = new ReadWriteFile();
+        ArrayList<PhoneBook> products = null;
+        try {
+            products = readWriteFile.readObjectFile(path);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
 }

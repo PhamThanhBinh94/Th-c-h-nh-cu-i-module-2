@@ -2,7 +2,7 @@ import java.io.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-class readWriteFile {
+class ReadWriteFile {
     ArrayList<PhoneBook> readObjectFile(String path) throws IOException, ClassNotFoundException {
         FileInputStream fileInputStream = new FileInputStream(path);
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);

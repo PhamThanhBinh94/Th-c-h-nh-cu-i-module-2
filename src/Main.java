@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        final String PATH = "PhoneProduct.txt";
         PhoneBookManager phoneBookManager = new PhoneBookManager();
         ArrayList<PhoneBook> phoneBooks = new ArrayList<>();
         int choice = -1;
@@ -38,6 +39,10 @@ public class Main {
                 case 5:
                     phoneBookManager.searchPhoneBook(phoneBooks);
                     break;
+                case 6:
+                    phoneBookManager.readProductList(PATH);
+                case 7:
+                    phoneBookManager.writeProductList(phoneBooks);
                 case 0:
                     System.exit(0);
             }
