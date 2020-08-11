@@ -68,13 +68,13 @@ public class PhoneBookManager {
             if (phoneBook.getNumberTelephone().equals(number)){
                 System.out.println("Bạn có muốn xóa danh bạ không ?");
                 String enter = scanner.nextLine();
-                if (enter==""){
-                    System.exit(0);
-                }
-                if (enter == "Y") {
+//                if (enter==""){
+//                    System.exit(0);
+//                }
+//                if (enter == "Y") {
                     phoneBooks.remove(phoneBooks.indexOf(phoneBook));
                     System.out.println(phoneBook);
-                }
+//                }
                 break;
             } else {
                 System.out.println("Không tìm được danh bạ với số điện thoại trên");
